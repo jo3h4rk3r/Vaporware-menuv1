@@ -16,6 +16,7 @@
 
 #include <stdint.h>
 #include "config.h"
+#include "adc.h"
 
 /* Charge thresholds — defined in config.h with derivation notes:
  *   BAT_FULL  181   raw >= 181 → ≥3.70 V → 3 bars (full)

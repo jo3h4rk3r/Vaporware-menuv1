@@ -116,6 +116,7 @@ typedef struct {
 #define GPIOA_BASE  0x40010800UL
 #define GPIOB_BASE  0x40010C00UL
 #define GPIOC_BASE  0x40011000UL
+#define VAPE_ADC_BASE  0x40020800UL
 #define GPIOA       ((GPIO_TypeDef *)GPIOA_BASE)
 #define GPIOB       ((GPIO_TypeDef *)GPIOB_BASE)
 #define GPIOC       ((GPIO_TypeDef *)GPIOC_BASE)
@@ -367,7 +368,6 @@ typedef struct {
  * Write 1 to begin conversion; hardware clears it.  Poll STS bit 1 (EOC).
  */
 #define VAPE_ADC_BASE  0x40020800UL
-
 /* ---- SysTick ---- */
 #define SYSTICK_BASE    0xE000E010UL
 typedef struct {

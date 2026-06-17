@@ -75,7 +75,7 @@
  *   after waking from Stop mode to be accepted as a genuine button press.
  *   Spurious wakes from board transients last microseconds to low tens of
  *   ms; real presses last 200 ms+.  Increase if spurious wakes persist.  */
-#define APP_FRAME_MS       33U
+#define APP_FRAME_MS       0U
 #define BTN_HOLD_WAKE_MS   50U
 
 /* ── SWD debug pins (Cortex-M0 fixed, do not reassign) ───────────────

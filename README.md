@@ -1,5 +1,10 @@
 # Vaporware
 
+>THIS PROGRAMS STRUCTURE AND README HAS BEEN ALTED FROM ORIGNAL VERSION! PLEASE VISIT https://github.com/ImoverEngineering/Vaporware IF YOU WANT THE ORIGNAL PROJECT.
+
+>CREDITS TO ImoverEngineering.
+>Vaperware fork "MenuV1" made by jo3h4rk3r.
+
 A minimal C firmware SDK for building games and apps on the **Raz DC25000** disposable vape — repurposed as a pocket game console.
 
 The device runs a Nations Tech **N32G031K8Q7-1** (ARM Cortex-M0) driving a 128×160 GC9107 IPS display, with a single button, battery ADC, and a coil MOSFET you can optionally fire. All examples exclude the Coil MOSFET and pressure sensor.
@@ -36,28 +41,6 @@ The device runs a Nations Tech **N32G031K8Q7-1** (ARM Cortex-M0) driving a 128×
 Full pin table and peripheral map: [`docs/README.md`](docs/README.md)
 
 ---
-
-## Repo Layout
-
-```
-Vaporware/
-├── src/              Library — shared drivers used by every example
-│   ├── include/      Public headers (display.h, button.h, battery.h, ...)
-│   └── src/          Driver source files + startup.s
-├── examples/         Ready-to-flash applications
-│   ├── flappy/       Flappy Bird
-│   ├── slots/        Slot machine with NV high-score
-│   ├── diagnostic/   Hardware probe — checks every peripheral
-│   ├── template/     Blank app skeleton — start here for a new project
-│   └── streamer/     Live PC→display video streamer (screen capture, games)
-├── tools/            Host-side scripts (flash, voltage check, diagnostics)
-├── docs/             Hardware reference, reverse-engineering notes
-└── firmware/         Raw device flash backups (not compiled source)
-```
-
----
-
-## Prerequisites
 
 ### Hardware
 
@@ -96,23 +79,8 @@ After installing, find your ST-Link bus ID (run in PowerShell with ST-Link plugg
 ```powershell
 usbipd list
 ```
-Look for a line like `1-2   0483:3748  STMicroelectronics ST-Link`. The `build_*.bat` and `flash_vape.bat` scripts hardcode `--busid 1-2` — if yours differs, edit that line in the batch file.
+Look for a line like `1-2   0483:3748  STMicroelectronics ST-Link`. The `build.bat` and `flash.bat` scripts hardcode `--busid 1-2` — if yours differs, edit that line in the batch file.
 
-**5 — Python 3 + pip packages** (for host-side tools and streamer)
-
-```cmd
-pip install pillow mss dxcam numpy pywin32
-```
-
-| Package | Required for |
-|---|---|
-| `pillow` | All streaming modes (screen, window, video) |
-| `mss` | Fast screen-region capture (`--screen`) — fallback when dxcam unavailable |
-| `dxcam` | Preferred screen capture — captures GPU-composited/hardware-accelerated video that mss misses |
-| `numpy` | 10× faster BGR565 conversion (optional but recommended) |
-| `pywin32` | Window capture by title (`--window`) |
-
----
 
 ## Quick Start
 
@@ -125,41 +93,17 @@ pip install pillow mss dxcam numpy pywin32
 | GND | GND |
 | 3.3 V | — (vape is self-powered, leave disconnected) |
 
-### 2 — Build
+### 2 — Edit flash.bat
 
-Open a Command Prompt, go to the example you want, and run the build script:
+Edit flash.bat to match your ST-Link bus ID.
 
-```cmd
-cd examples\flappy
-build_flappy.bat
-```
-
-Output lands in `examples\flappy\build\flappy.bin`.
+usbipd attach --wsl --busid <busID>
 
 ### 3 — Flash
 
-```cmd
-python gen_direct_flash.py   :: generates direct_flash.tcl from the .bin
-flash_vape.bat               :: attaches ST-Link to WSL, runs OpenOCD
-```
+Run start_flash.bat directly and it will build and flash the firmware for you.
 
 The vape boots into the new firmware immediately after flashing.
-
----
-
-## Examples
-
-| Example | Description | Key features used |
-|---|---|---|
-| **flappy** | Flappy Bird clone | display, button, battery meter |
-| **slots** | One-armed bandit with persistent high score | display, button, nv storage |
-| **diagnostic** | Hardware probe — dumps all sensor readings to display | all modules |
-| **template** | Skeleton app — copy this to start a new project | app framework |
-| **streamer** | Stream live video from PC to the display via SWD (~7 fps) | display, SWD protocol, Python host |
-
-The streamer example does not use the `app` framework — it implements its own `main()` and loops on an SWD-driven protocol. The companion host script (`stream_frames.py`) captures any window or screen region and pushes frames over ST-Link. See [`examples/streamer/README.md`](examples/streamer/README.md) for full setup and usage.
-
----
 
 ## Library Overview
 
@@ -191,17 +135,6 @@ Full API documentation: [`docs/README.md`](docs/README.md)
 
 ---
 
-## Creating a New App
-
-1. Copy `examples/template/` and rename the folder
-2. Rename `build_template.bat` → `build_<yourapp>.bat` and set `APP_NAME`
-3. Edit `src/main.c` — implement `app_init()` and `app_update()`
-4. Build and flash using the same workflow as the examples above
-
-The template build script already references `../../src` for the library — no path changes needed as long as your app lives under `examples/`.
-
----
-
 ## Flashing Tools
 
 `tools/` contains host-side Python scripts for tasks beyond the normal build/flash flow:
@@ -210,8 +143,6 @@ The template build script already references `../../src` for the library — no 
 |---|---|
 | `flash_charge.py` | Flash any `.bin` via OpenOCD telnet (edit `BIN_PATH` at top) |
 | `check_voltage.py` | Read live battery voltage via SWD without flashing |
-| `diag_display.py` | Drive display init and fill sequences manually via OpenOCD |
-| `cam_capture.py` | Capture a frame from a USB webcam (display debugging) |
 | `spi_sniff.py` | Passive SPI transaction capture via SWD memory reads |
 
 All scripts connect to an already-running OpenOCD telnet server on port 6666.

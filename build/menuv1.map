@@ -1,0 +1,602 @@
+Archive member included to satisfy reference by file (symbol)
+
+C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_uqi.o)
+                              build\main.o (__gnu_thumb1_case_uqi)
+C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+                              build\pong.o (__aeabi_uidiv)
+C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+                              build\fungraphics.o (__aeabi_idiv)
+C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+                              C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 build\startup.o
+ .data          0x00000000        0x0 build\startup.o
+ .bss           0x00000000        0x0 build\startup.o
+ .text          0x00000000        0x0 build\system.o
+ .data          0x00000000        0x0 build\system.o
+ .bss           0x00000000        0x0 build\system.o
+ .text.millis   0x00000000        0xc build\system.o
+ .text          0x00000000        0x0 build\pong.o
+ .data          0x00000000        0x0 build\pong.o
+ .bss           0x00000000        0x0 build\pong.o
+ .text.pong_wake
+                0x00000000        0x2 build\pong.o
+ .text          0x00000000        0x0 build\fungraphics.o
+ .data          0x00000000        0x0 build\fungraphics.o
+ .bss           0x00000000        0x0 build\fungraphics.o
+ .text.fun_graphics_wake
+                0x00000000        0x2 build\fungraphics.o
+ .text          0x00000000        0x0 build\display.o
+ .data          0x00000000        0x0 build\display.o
+ .bss           0x00000000        0x0 build\display.o
+ .text.display_recover
+                0x00000000      0x2f4 build\display.o
+ .text.display_draw_image
+                0x00000000       0xb8 build\display.o
+ .text.display_draw_sprite
+                0x00000000       0xac build\display.o
+ .text.display_draw_chunk_2x
+                0x00000000       0xec build\display.o
+ .text.display_sleep_in
+                0x00000000       0x48 build\display.o
+ .text.display_sleep_out
+                0x00000000       0x68 build\display.o
+ .text.display_draw_chunk_cpu
+                0x00000000       0x94 build\display.o
+ .text.display_draw_chunk_dma
+                0x00000000       0x94 build\display.o
+ .text.display_draw_pixel
+                0x00000000       0x4c build\display.o
+ .text          0x00000000        0x0 build\vape.o
+ .data          0x00000000        0x0 build\vape.o
+ .bss           0x00000000        0x0 build\vape.o
+ .text          0x00000000        0x0 build\button.o
+ .data          0x00000000        0x0 build\button.o
+ .bss           0x00000000        0x0 build\button.o
+ .text.button_just_released
+                0x00000000        0xc build\button.o
+ .text          0x00000000        0x0 build\battery.o
+ .data          0x00000000        0x0 build\battery.o
+ .bss           0x00000000        0x0 build\battery.o
+ .text          0x00000000        0x0 build\brickbreaker.o
+ .data          0x00000000        0x0 build\brickbreaker.o
+ .bss           0x00000000        0x0 build\brickbreaker.o
+ .text.brickbreaker_wake
+                0x00000000        0x2 build\brickbreaker.o
+ .text          0x00000000        0x0 build\sounddriver.o
+ .data          0x00000000        0x0 build\sounddriver.o
+ .bss           0x00000000        0x0 build\sounddriver.o
+ .text.coin_sound
+                0x00000000       0x28 build\sounddriver.o
+ .text          0x00000000        0x0 build\nv.o
+ .data          0x00000000        0x0 build\nv.o
+ .bss           0x00000000        0x0 build\nv.o
+ .text.nv_reset
+                0x00000000       0x2c build\nv.o
+ .text          0x00000000        0x0 build\raycaster.o
+ .data          0x00000000        0x0 build\raycaster.o
+ .bss           0x00000000        0x0 build\raycaster.o
+ .text          0x00000000        0x0 build\app.o
+ .data          0x00000000        0x0 build\app.o
+ .bss           0x00000000        0x0 build\app.o
+ .text.app_set_hold_reset
+                0x00000000       0x14 build\app.o
+ .text.app_wake
+                0x00000000        0x2 build\app.o
+ .text          0x00000000        0x0 build\main.o
+ .data          0x00000000        0x0 build\main.o
+ .bss           0x00000000        0x0 build\main.o
+ .text.app_wake
+                0x00000000        0x8 build\main.o
+ .data          0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_uqi.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_uqi.o)
+ .debug_line_str
+                0x00000000       0xcd C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_uqi.o)
+ .ARM.attributes
+                0x00000000       0x1e C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_uqi.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000000       0x20 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .debug_line_str
+                0x00000000       0xcd C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000000       0x1e C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+ .debug_frame   0x00000000       0x20 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+ .debug_line_str
+                0x00000000       0xcd C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x00000000       0x1e C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+ .debug_line_str
+                0x00000000       0xcd C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000000       0x1e C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00010000         xr
+SRAM             0x20000000         0x00002000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libnosys.a
+LOAD build\startup.o
+LOAD build\system.o
+LOAD build\pong.o
+LOAD build\fungraphics.o
+LOAD build\display.o
+LOAD build\vape.o
+LOAD build\button.o
+LOAD build\battery.o
+LOAD build\brickbreaker.o
+LOAD build\sounddriver.o
+LOAD build\nv.o
+LOAD build\raycaster.o
+LOAD build\app.o
+LOAD build\main.o
+                0x20002000                        _estack = (ORIGIN (SRAM) + LENGTH (SRAM))
+
+.isr_vector     0x08000000       0xb4
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000       0xb4 build\startup.o
+                0x08000000                _vectors
+                0x080000b4                        . = ALIGN (0x4)
+
+.text           0x080000b4     0x3364
+                0x080000b4                        . = ALIGN (0x4)
+ *(.text)
+ .text          0x080000b4       0x14 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_uqi.o)
+                0x080000b4                __gnu_thumb1_case_uqi
+ .text          0x080000c8      0x114 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+                0x080000c8                __aeabi_uidiv
+                0x080000c8                __udivsi3
+                0x080001d4                __aeabi_uidivmod
+ .text          0x080001dc      0x1d4 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+                0x080001dc                __divsi3
+                0x080001dc                __aeabi_idiv
+                0x080003a8                __aeabi_idivmod
+ .text          0x080003b0        0x4 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+                0x080003b0                __aeabi_idiv0
+                0x080003b0                __aeabi_ldiv0
+ *(.text*)
+ .text.Reset_Handler
+                0x080003b4       0x40 build\startup.o
+                0x080003b4                Reset_Handler
+ .text.Default_Handler
+                0x080003f4        0x2 build\startup.o
+                0x080003f4                PendSV_Handler
+                0x080003f4                NMI_Handler
+                0x080003f4                TIM3_IRQHandler
+                0x080003f4                SVC_Handler
+                0x080003f4                HardFault_Handler
+ .text.SysTick_Handler
+                0x080003f6        0x2 build\system.o
+                0x080003f6                SysTick_Handler
+ .text.clock_init
+                0x080003f8       0x48 build\system.o
+                0x080003f8                clock_init
+ .text.delay_ms
+                0x08000440       0x3c build\system.o
+                0x08000440                delay_ms
+ .text.clock_boost_48mhz
+                0x0800047c      0x110 build\system.o
+                0x0800047c                clock_boost_48mhz
+ .text.system_enter_stop
+                0x0800058c      0x100 build\system.o
+                0x0800058c                system_enter_stop
+ .text.tim1_init
+                0x0800068c       0x4c build\system.o
+                0x0800068c                tim1_init
+ .text.sin_fast
+                0x080006d8       0x34 build\pong.o
+ .text.pong_init
+                0x0800070c       0xd4 build\pong.o
+                0x0800070c                pong_init
+ .text.pong_update
+                0x080007e0      0x36c build\pong.o
+                0x080007e0                pong_update
+ .text.fun_graphics_init
+                0x08000b4c       0x5c build\fungraphics.o
+                0x08000b4c                fun_graphics_init
+ .text.fun_graphics_update
+                0x08000ba8      0x284 build\fungraphics.o
+                0x08000ba8                fun_graphics_update
+ .text.spi_write_byte
+                0x08000e2c       0x20 build\display.o
+ .text.spi_write_byte_fast
+                0x08000e4c       0x18 build\display.o
+ .text.lcd_write_cmd
+                0x08000e64       0x14 build\display.o
+ .text.lcd_write_data
+                0x08000e78       0x14 build\display.o
+ .text.display_gpio_init
+                0x08000e8c      0x124 build\display.o
+                0x08000e8c                display_gpio_init
+ .text.display_set_window
+                0x08000fb0       0x4e build\display.o
+                0x08000fb0                display_set_window
+ *fill*         0x08000ffe        0x2 
+ .text.display_fill
+                0x08001000       0xc4 build\display.o
+                0x08001000                display_fill
+ .text.display_init
+                0x080010c4      0x2f8 build\display.o
+                0x080010c4                display_init
+ .text.display_fill_rect
+                0x080013bc       0xa0 build\display.o
+                0x080013bc                display_fill_rect
+ .text.display_set_backlight
+                0x0800145c       0x14 build\display.o
+                0x0800145c                display_set_backlight
+ .text.vape_safety_init
+                0x08001470       0x10 build\vape.o
+                0x08001470                vape_safety_init
+ .text.vape_init
+                0x08001480        0x2 build\vape.o
+                0x08001480                vape_init
+ *fill*         0x08001482        0x2 
+ .text.button_read_raw
+                0x08001484       0x58 build\button.o
+                0x08001484                button_read_raw
+ .text.button_init
+                0x080014dc       0x8c build\button.o
+                0x080014dc                button_init
+ .text.button_update
+                0x08001568       0x90 build\button.o
+                0x08001568                button_update
+ .text.button_pressed
+                0x080015f8       0x10 build\button.o
+                0x080015f8                button_pressed
+ .text.button_just_pressed
+                0x08001608        0xc build\button.o
+                0x08001608                button_just_pressed
+ .text.button_held_ms
+                0x08001614       0x24 build\button.o
+                0x08001614                button_held_ms
+ .text.button_raw
+                0x08001638        0x8 build\button.o
+                0x08001638                button_raw
+ .text.button_is_up
+                0x08001640       0x14 build\button.o
+                0x08001640                button_is_up
+ .text.button_is_down
+                0x08001654       0x14 build\button.o
+                0x08001654                button_is_down
+ .text.button_is_left
+                0x08001668       0x14 build\button.o
+                0x08001668                button_is_left
+ .text.button_is_right
+                0x0800167c       0x14 build\button.o
+                0x0800167c                button_is_right
+ .text.button_is_pressed
+                0x08001690       0x14 build\button.o
+                0x08001690                button_is_pressed
+ .text.bat_init
+                0x080016a4       0x68 build\battery.o
+                0x080016a4                bat_init
+ .text.bat_read_raw
+                0x0800170c       0x6c build\battery.o
+                0x0800170c                bat_read_raw
+ .text.reset_level
+                0x08001778       0x5c build\brickbreaker.o
+ .text.reset_ball
+                0x080017d4       0x44 build\brickbreaker.o
+ .text.sin_fast
+                0x08001818       0x34 build\brickbreaker.o
+ .text.draw_text.constprop.0
+                0x0800184c       0x9c build\brickbreaker.o
+ .text.draw_level_text
+                0x080018e8       0x48 build\brickbreaker.o
+ .text.level_2  0x08001930       0x5c build\brickbreaker.o
+ .text.brickbreaker_init
+                0x0800198c       0x74 build\brickbreaker.o
+                0x0800198c                brickbreaker_init
+ .text.brickbreaker_update
+                0x08001a00      0x444 build\brickbreaker.o
+                0x08001a00                brickbreaker_update
+ .text.coil_set
+                0x08001e44       0x34 build\sounddriver.o
+                0x08001e44                coil_set
+ .text.delay_us
+                0x08001e78       0x1a build\sounddriver.o
+                0x08001e78                delay_us
+ *fill*         0x08001e92        0x2 
+ .text.beep     0x08001e94       0x58 build\sounddriver.o
+                0x08001e94                beep
+ .text.play_startup
+                0x08001eec       0x30 build\sounddriver.o
+                0x08001eec                play_startup
+ .text.laser_sound
+                0x08001f1c       0x1a build\sounddriver.o
+                0x08001f1c                laser_sound
+ *fill*         0x08001f36        0x2 
+ .text.explosion_sound
+                0x08001f38       0x28 build\sounddriver.o
+                0x08001f38                explosion_sound
+ .text.flash_wait
+                0x08001f60       0x28 build\nv.o
+ .text.flash_erase_page
+                0x08001f88       0x28 build\nv.o
+ .text.flash_unlock
+                0x08001fb0       0x20 build\nv.o
+ .text.nv_read  0x08001fd0       0x40 build\nv.o
+                0x08001fd0                nv_read
+ .text.nv_write
+                0x08002010       0x7c build\nv.o
+                0x08002010                nv_write
+ .text.raycaster_init
+                0x0800208c       0x40 build\raycaster.o
+                0x0800208c                raycaster_init
+ .text.raycaster_update
+                0x080020cc      0x4a0 build\raycaster.o
+                0x080020cc                raycaster_update
+ .text.app_set_sleep_timeout
+                0x0800256c        0xc build\app.o
+                0x0800256c                app_set_sleep_timeout
+ .text.startup.main
+                0x08002578      0x22c build\app.o
+                0x08002578                main
+ .text.clear_display
+                0x080027a4        0xa build\main.o
+ *fill*         0x080027ae        0x2 
+ .text.menu_background
+                0x080027b0       0x64 build\main.o
+ .text.draw_text.constprop.0
+                0x08002814       0xa0 build\main.o
+ .text.menu_draw
+                0x080028b4       0xe4 build\main.o
+ .text.app_init
+                0x08002998       0x38 build\main.o
+                0x08002998                app_init
+ .text.menu_update
+                0x080029d0      0x27c build\main.o
+                0x080029d0                menu_update
+ .text.app_update
+                0x08002c4c       0x70 build\main.o
+                0x08002c4c                app_update
+ *(.rodata)
+ *(.rodata*)
+ .rodata.font_0_9
+                0x08002cbc       0x32 build\pong.o
+ .rodata.font_A_Z
+                0x08002cee       0x82 build\pong.o
+ .rodata.sin_table
+                0x08002d70      0x100 build\fungraphics.o
+ .rodata.draw_level_text.str1.1
+                0x08002e70       0x49 build\brickbreaker.o
+                                  0xb (size before relaxing)
+ .rodata.brickbreaker_update.str1.1
+                0x08002eb9        0x6 build\brickbreaker.o
+ .rodata.font_0_9
+                0x08002eb9       0x32 build\brickbreaker.o
+ .rodata.font_A_Z
+                0x08002eeb       0x82 build\brickbreaker.o
+ .rodata.raycaster_update.cst1
+                0x08002f6d        0x1 build\raycaster.o
+ .rodata.map    0x08002f6e       0x40 build\raycaster.o
+ .rodata.sin_lut
+                0x08002fae      0x200 build\raycaster.o
+ .rodata.font_0_9
+                0x080031ae       0x32 build\raycaster.o
+ .rodata.font_A_Z
+                0x080031e0       0x82 build\raycaster.o
+ .rodata.menu_draw.str1.1
+                0x08003262       0x3a build\main.o
+ .rodata.sin_table
+                0x08003262      0x100 build\main.o
+ .rodata.font_0_9
+                0x08003362       0x32 build\main.o
+ .rodata.font_A_Z
+                0x08003394       0x82 build\main.o
+                0x08003418                        . = ALIGN (0x4)
+ *fill*         0x08003416        0x2 
+                0x08003418                        _etext = .
+
+.glue_7         0x08003418        0x0
+ .glue_7        0x08003418        0x0 linker stubs
+
+.glue_7t        0x08003418        0x0
+ .glue_7t       0x08003418        0x0 linker stubs
+
+.vfp11_veneer   0x08003418        0x0
+ .vfp11_veneer  0x08003418        0x0 linker stubs
+
+.v4_bx          0x08003418        0x0
+ .v4_bx         0x08003418        0x0 linker stubs
+
+.iplt           0x08003418        0x0
+ .iplt          0x08003418        0x0 build\startup.o
+
+.rel.dyn        0x08003418        0x0
+ .rel.iplt      0x08003418        0x0 build\startup.o
+
+.sprites        0x08003418        0x0
+                0x08003418                        . = ALIGN (0x4)
+                0x08003418                        _sprites_start = .
+ *(.sprites)
+ *(.sprites*)
+                0x08003418                        . = ALIGN (0x4)
+                0x08003418                        _sprites_end = .
+                0x08003418                        _sidata = LOADADDR (.data)
+
+.data           0x20000000        0x4 load address 0x08003418
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ *(.data*)
+ .data.autoplay
+                0x20000000        0x1 build\pong.o
+ .data.sounddriverEnabled
+                0x20000001        0x1 build\sounddriver.o
+                0x20000001                sounddriverEnabled
+ .data.autoplay
+                0x20000002        0x1 build\raycaster.o
+                0x20000004                        . = ALIGN (0x4)
+ *fill*         0x20000003        0x1 
+                0x20000004                        _edata = .
+
+.igot.plt       0x20000004        0x0 load address 0x0800341c
+ .igot.plt      0x20000004        0x0 build\startup.o
+
+.bss            0x20000004      0x264 load address 0x0800341c
+                0x20000004                        . = ALIGN (0x4)
+                0x20000004                        _sbss = .
+ *(.bss)
+ *(.bss*)
+ .bss.g_tick_ms
+                0x20000004        0x4 build\system.o
+ .bss.rainbow_t
+                0x20000008        0x1 build\pong.o
+ *fill*         0x20000009        0x3 
+ .bss.prev_ball_y
+                0x2000000c        0x4 build\pong.o
+ .bss.prev_ball_x
+                0x20000010        0x4 build\pong.o
+ .bss.prev_ai_y
+                0x20000014        0x4 build\pong.o
+ .bss.prev_player_y
+                0x20000018        0x4 build\pong.o
+ .bss.score     0x2000001c        0x4 build\pong.o
+ .bss.ball_vy   0x20000020        0x4 build\pong.o
+ .bss.ball_vx   0x20000024        0x4 build\pong.o
+ .bss.ball_y    0x20000028        0x4 build\pong.o
+ .bss.ball_x    0x2000002c        0x4 build\pong.o
+ .bss.ai_y      0x20000030        0x4 build\pong.o
+ .bss.player_y  0x20000034        0x4 build\pong.o
+ .bss.prev_y    0x20000038       0x50 build\fungraphics.o
+ .bss.prev_x    0x20000088       0x50 build\fungraphics.o
+ .bss.star_z    0x200000d8       0x50 build\fungraphics.o
+ .bss.star_y    0x20000128       0x50 build\fungraphics.o
+ .bss.star_x    0x20000178       0x50 build\fungraphics.o
+ .bss.t         0x200001c8        0x1 build\fungraphics.o
+ .bss.last_button
+                0x200001c9        0x1 build\fungraphics.o
+ .bss.mode      0x200001ca        0x1 build\fungraphics.o
+ .bss.g_holding
+                0x200001cb        0x1 build\button.o
+ .bss.g_held_since
+                0x200001cc        0x2 build\button.o
+ .bss.g_just_released
+                0x200001ce        0x1 build\button.o
+ .bss.g_just_pressed
+                0x200001cf        0x1 build\button.o
+ .bss.g_prev_button
+                0x200001d0        0x1 build\button.o
+ .bss.g_button  0x200001d1        0x1 build\button.o
+ .bss.bricks    0x200001d2       0x40 build\brickbreaker.o
+ .bss.autoplay  0x20000212        0x1 build\brickbreaker.o
+ .bss.rainbow_t
+                0x20000213        0x1 build\brickbreaker.o
+ .bss.prev_paddle_x
+                0x20000214        0x4 build\brickbreaker.o
+ .bss.prev_ball_y
+                0x20000218        0x4 build\brickbreaker.o
+ .bss.prev_ball_x
+                0x2000021c        0x4 build\brickbreaker.o
+ .bss.score     0x20000220        0x4 build\brickbreaker.o
+ .bss.ball_attached
+                0x20000224        0x1 build\brickbreaker.o
+ *fill*         0x20000225        0x3 
+ .bss.ball_vy   0x20000228        0x4 build\brickbreaker.o
+ .bss.ball_vx   0x2000022c        0x4 build\brickbreaker.o
+ .bss.ball_y    0x20000230        0x4 build\brickbreaker.o
+ .bss.ball_x    0x20000234        0x4 build\brickbreaker.o
+ .bss.paddle_x  0x20000238        0x4 build\brickbreaker.o
+ .bss.level     0x2000023c        0x4 build\brickbreaker.o
+ .bss.angle     0x20000240        0x1 build\raycaster.o
+ *fill*         0x20000241        0x3 
+ .bss.py        0x20000244        0x4 build\raycaster.o
+ .bss.px        0x20000248        0x4 build\raycaster.o
+ .bss.ai_turn_timer
+                0x2000024c        0x4 build\raycaster.o
+ .bss.g_hold_fired
+                0x20000250        0x1 build\app.o
+ *fill*         0x20000251        0x3 
+ .bss.g_hold_cb
+                0x20000254        0x4 build\app.o
+ .bss.g_hold_ms
+                0x20000258        0x2 build\app.o
+ .bss.g_last_active
+                0x2000025a        0x2 build\app.o
+ .bss.g_sleep_ms
+                0x2000025c        0x2 build\app.o
+ .bss.last_up.0
+                0x2000025e        0x1 build\main.o
+ .bss.last_down.1
+                0x2000025f        0x1 build\main.o
+ .bss.g_count   0x20000260        0x4 build\main.o
+ .bss.g_state   0x20000264        0x1 build\main.o
+ *(COMMON)
+                0x20000268                        . = ALIGN (0x4)
+ *fill*         0x20000265        0x3 
+                0x20000268                        _ebss = .
+
+.stack          0x20000268      0x800 load address 0x0800341c
+                0x20000268                        . = ALIGN (0x8)
+ *(.stack)
+ .stack         0x20000268      0x800 build\startup.o
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+OUTPUT(build\menuv1.elf elf32-littlearm)
+LOAD linker stubs
+LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libc.a
+LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libm.a
+LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp\libgcc.a
+
+.ARM.attributes
+                0x00000000       0x2d
+ .ARM.attributes
+                0x00000000       0x21 build\startup.o
+ .ARM.attributes
+                0x00000021       0x2c build\system.o
+ .ARM.attributes
+                0x0000004d       0x2c build\pong.o
+ .ARM.attributes
+                0x00000079       0x2c build\fungraphics.o
+ .ARM.attributes
+                0x000000a5       0x2c build\display.o
+ .ARM.attributes
+                0x000000d1       0x2c build\vape.o
+ .ARM.attributes
+                0x000000fd       0x2c build\button.o
+ .ARM.attributes
+                0x00000129       0x2c build\battery.o
+ .ARM.attributes
+                0x00000155       0x2c build\brickbreaker.o
+ .ARM.attributes
+                0x00000181       0x2c build\sounddriver.o
+ .ARM.attributes
+                0x000001ad       0x2c build\nv.o
+ .ARM.attributes
+                0x000001d9       0x2c build\raycaster.o
+ .ARM.attributes
+                0x00000205       0x2c build\app.o
+ .ARM.attributes
+                0x00000231       0x2c build\main.o
+
+.comment        0x00000000       0x45
+ .comment       0x00000000       0x45 build\system.o
+                                 0x46 (size before relaxing)
+ .comment       0x00000045       0x46 build\pong.o
+ .comment       0x00000045       0x46 build\fungraphics.o
+ .comment       0x00000045       0x46 build\display.o
+ .comment       0x00000045       0x46 build\vape.o
+ .comment       0x00000045       0x46 build\button.o
+ .comment       0x00000045       0x46 build\battery.o
+ .comment       0x00000045       0x46 build\brickbreaker.o
+ .comment       0x00000045       0x46 build\sounddriver.o
+ .comment       0x00000045       0x46 build\nv.o
+ .comment       0x00000045       0x46 build\raycaster.o
+ .comment       0x00000045       0x46 build\app.o
+ .comment       0x00000045       0x46 build\main.o
