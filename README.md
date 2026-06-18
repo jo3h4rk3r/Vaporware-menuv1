@@ -112,8 +112,9 @@ The vape boots into the new firmware immediately after flashing.
 
 ## BUTTON SETUP
 Raw button values will be displayed in top left corner of menu screen.
-<img width="388" height="128" alt="bd3c87d8e5544e8a92f4be7a0d2e663c" src="https://github.com/user-attachments/assets/8e6b10a9-1ef7-4611-aad6-b637aaac69e0" />
 Calibrate your button values in button.c according the the values displayed on screen.
+
+<img width="388" height="128" alt="bd3c87d8e5544e8a92f4be7a0d2e663c" src="https://github.com/user-attachments/assets/8e6b10a9-1ef7-4611-aad6-b637aaac69e0" />
 
 ## (OPTIONAL) SPEAKER SETUP.
 Speaker is disabled by default.
