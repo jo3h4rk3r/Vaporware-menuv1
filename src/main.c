@@ -112,38 +112,17 @@ static uint16_t g_bat_raw = BAT_FULL;  /* default = fully charged (3582) */
 /* ── App state ──────────────────────────────────────────────────────── */
 static uint32_t g_count = 0;
 
-/* ── Hold-to-reset callback ─────────────────────────────────────────── */
-
-
 
 /* ── Framework callbacks ────────────────────────────────────────────── */
 
 void app_init(void) {
 
-
-
     clock_init();          
 
     delay_ms(50);
 
-    /* 2. Init display at safe speed (8 MHz world) */
-    //display_init();
-    //display_set_backlight(80);
-
-    //delay_ms(50);
-    
-    /* 3. NOW overclock CPU */
-    //clock_boost_48mhz();
-
-    /* 4. THEN increase SPI speed AFTER display is alive */
-    //SPI1->CR1 = (SPI1->CR1 & ~(7UL << 3)) | SPI_CR1_BR_DIV4;
-
-    //tim1_init();
-    /* Configure framework features */
-
     app_set_sleep_timeout(120000);           /* sleep after 60 s idle    */
     //app_set_hold_reset(10000, on_reset);    /* hold 10 s to reset       */
-
 
     g_bat_raw    = bat_read_raw();
     g_frame_ctr  = 0;
@@ -262,7 +241,7 @@ static void menu_draw(void)
 
 void app_update(uint32_t frame)
 {
-
+    //Comment out after multi buttons is installed.
     //Only for vape with 1 button
     if (button_held_ms() > 2500u) {
         g_state = STATE_MENU;
@@ -273,6 +252,7 @@ void app_update(uint32_t frame)
     }
 
 
+    //Brings you back to main menu if up button is held.
     if (button_is_up() && button_held_ms() > 950u && g_state != STATE_MENU) {
         g_state = STATE_MENU;
         clear_display();
@@ -281,6 +261,7 @@ void app_update(uint32_t frame)
         //g_count++;
     }
 
+    //Refreshes battery icon every 5 seconds
     if (g_state == STATE_MENU) {
         menu_update(frame);
 
@@ -292,6 +273,8 @@ void app_update(uint32_t frame)
         }
     }
         
+
+    //APP STATE
     if (g_state == STATE_PONG) {
         pong_update(frame);
     }
@@ -307,15 +290,12 @@ void app_update(uint32_t frame)
     if (g_state == STATE_BRICKBREAKER) {
         brickbreaker_update(frame);
     }
-
-
-
-    
 }
 
 void menu_update(uint32_t frame) {
     (void)frame;    /* remove cast if you use frame for animation timing */
     
+    //RAW BUTTON VALUE
     char buf[16];
     uint16_t v = button_raw();
     buf[0] = '0' + ((v / 1000) % 10);
@@ -326,6 +306,7 @@ void menu_update(uint32_t frame) {
     draw_text(buf, 10, 5, COL_RGB(0,0,255), COL_EYE);
 
 
+    //RAW BATTERY VALUE - Broken for now, will fix later.
     char buf1[16];
     uint16_t b = bat_read_raw();
     buf1[0] = '0' + ((b / 1000) % 10);
@@ -340,36 +321,38 @@ void menu_update(uint32_t frame) {
     static uint8_t last_up = 0;
 
     uint8_t down = button_is_down();
+    //Temp set to left for single button. Change back to button_is_up() for multi button setup.
     uint8_t up   = button_is_left();
 
     
     if (button_just_pressed() && g_state == STATE_MENU) {
-    if (down && !last_down) {
-        g_count++;
-        if (g_count >= MENU_COUNT)
-            g_count = 0;
+        if (down && !last_down) {
+            g_count++;
+            if (g_count >= MENU_COUNT)
+                g_count = 0;
 
-        nv_write(MY_KEY, g_count);
-        menu_draw();
-        beep(700, 20);
-    }
+            nv_write(MY_KEY, g_count);
+            menu_draw();
+            beep(700, 20);
+        }
 
-    if (up && !last_up)
-    {
-        if (g_count == 0)
-            g_count = MENU_COUNT - 1;
-        else
-            g_count--;
+        if (up && !last_up) {
+            if (g_count == 0)
+                g_count = MENU_COUNT - 1;
+            else
+                g_count--;
 
-        nv_write(MY_KEY, g_count);
-        menu_draw();
-        beep(500, 20);
-    }
+            nv_write(MY_KEY, g_count);
+            menu_draw();
+            beep(500, 20);
+        }
     }
 
     last_down = down;
     last_up = up;
 
+    //Allows you to enable/disable speaker from main menu. Feel free to uncomment this once button and speaker is installed.
+    /* 
     if (button_is_right() && g_state == STATE_MENU) {
         if (sounddriverEnabled) {
             sounddriverEnabled = 0;
@@ -382,10 +365,8 @@ void menu_update(uint32_t frame) {
             sounddriverEnabled = 1;
             beep(6000,50);
         }
-    }
+    }*/
 
-    
-    
     if (button_is_pressed() && g_state == STATE_MENU) {
         
         beep(2000,50);
@@ -418,8 +399,10 @@ void menu_update(uint32_t frame) {
         }        
     }
 
-    //Only for vape with 1 button
-    
+
+
+    //Only for vape with 1 button!
+    //Comment out after multi buttons is installed.
     if (g_state == STATE_MENU) {
         if (button_held_ms() > 1500u) {
             if (g_count == MENU_PONG) {
