@@ -108,7 +108,11 @@ usbipd attach --wsl --busid <busID>
 
 ### 3 — Flash
 Run start_flash.bat directly and it will build and flash the firmware for you.
-The vape boots into the new firmware immediately after flashing.
+The vape will boot into the firmware automatically.
+Single button logic is enabled by default.
+Press button for next menu item. Press and hold to enter.
+Press and hold to exit back to main menu.
+All menu items will be in AutoPlay mode by default.
 
 ## BUTTON SETUP
 Raw button values will be displayed in top left corner of menu screen.
