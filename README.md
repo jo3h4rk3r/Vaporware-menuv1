@@ -3,7 +3,7 @@
 This a fork of Vaporware that adds
 multi-button support, beeper support
 and a interactive menu.
-Beeper uses exisiting vape coil pins and is disabled by default. 
+Beeper uses existing vape coil pins and is disabled by default. 
 
 >THIS PROGRAMS STRUCTURE AND README HAS BEEN ALTED FROM ORIGNAL VERSION! PLEASE VISIT https://github.com/ImoverEngineering/Vaporware IF YOU WANT THE ORIGNAL PROJECT.
 
