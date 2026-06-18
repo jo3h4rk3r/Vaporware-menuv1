@@ -86,9 +86,9 @@ static void handle_button(void)
 // ======================================================
 static void mode_plasma(void)
 {
-    for (int y = 0; y < SCREEN_H; y += 1)
+    for (int y = 0; y < SCREEN_H; y += 8)
     {
-        for (int x = 0; x < SCREEN_W; x += 1)
+        for (int x = 0; x < SCREEN_W; x += 8)
         {
             uint8_t nx = x * 1;
             uint8_t ny = y * 1;
@@ -102,7 +102,7 @@ static void mode_plasma(void)
             uint8_t g = 128 + sin_fast((uint8_t)(v + 85));
             uint8_t b = 128 + sin_fast((uint8_t)(v + 170));
 
-            draw_rect(x, y, 1, 1, COL_RGB(r,g,b));
+            draw_rect(x, y, 8, 8, COL_RGB(r,g,b));
         }
     }
 }
