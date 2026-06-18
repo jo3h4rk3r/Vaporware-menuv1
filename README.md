@@ -2,7 +2,6 @@
 <img width="3229" height="2451" alt="image" src="https://github.com/user-attachments/assets/8107a78f-6bb3-49ea-ba97-c2bc24bec41c" />
 <img width="2160" height="2171" alt="vapeio" src="https://github.com/user-attachments/assets/2b7b1250-0093-4b2f-94e1-1af762395348" />
 <img width="2160" height="2171" alt="wireing2" src="https://github.com/user-attachments/assets/25a9e746-3ada-4e9f-94c2-8109f7e68ccb" />
-<img width="388" height="128" alt="bd3c87d8e5544e8a92f4be7a0d2e663c" src="https://github.com/user-attachments/assets/8e6b10a9-1ef7-4611-aad6-b637aaac69e0" />
 
 This is a fork of Vaporware that adds
 multi-button support, beeper support
@@ -99,22 +98,29 @@ Look for a line like `1-2   0483:3748  STMicroelectronics ST-Link`. The `build.b
 
 | ST-Link pin | Vape test pad |
 |---|---|
-| SWDIO | PA13 |
-| SWCLK | PA14 |
+| SWDIO | PA13 | CC
+| SWCLK | PA14 | CC
 | GND | GND |
 | 3.3 V | — (vape is self-powered, leave disconnected) |
 
 ### 2 — Edit flash.bat
-
 Edit flash.bat to match your ST-Link bus ID.
-
 usbipd attach --wsl --busid <busID>
 
 ### 3 — Flash
-
 Run start_flash.bat directly and it will build and flash the firmware for you.
-
 The vape boots into the new firmware immediately after flashing.
+
+## BUTTON SETUP
+Raw button values will be displayed in top left corner of menu screen.
+Calibrate your button values in button.c according the the values displayed on screen.
+<img width="388" height="128" alt="bd3c87d8e5544e8a92f4be7a0d2e663c" src="https://github.com/user-attachments/assets/8e6b10a9-1ef7-4611-aad6-b637aaac69e0" />
+
+## (OPTIONAL) SPEAKER SETUP.
+Speaker is disabled by default.
+Wire a beeper or small speaker to the pads shown.
+<img width="2160" height="2171" alt="wireing2" src="https://github.com/user-attachments/assets/25a9e746-3ada-4e9f-94c2-8109f7e68ccb" />
+Once coil has been removed and speaker has been installed. You can enable speaker in sounddriver.c and set 'sounddriverEnabled = 1' (ENABLE AT YOUR OWN RISK!)
 
 ## Library Overview
 
