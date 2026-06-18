@@ -3,7 +3,6 @@
 <img width="2160" height="2171" alt="vapeio" src="https://github.com/user-attachments/assets/2b7b1250-0093-4b2f-94e1-1af762395348" />
 <img width="2160" height="2171" alt="wireing2" src="https://github.com/user-attachments/assets/25a9e746-3ada-4e9f-94c2-8109f7e68ccb" />
 <img width="388" height="128" alt="bd3c87d8e5544e8a92f4be7a0d2e663c" src="https://github.com/user-attachments/assets/8e6b10a9-1ef7-4611-aad6-b637aaac69e0" />
-Button config can be found in button.c
 
 This is a fork of Vaporware that adds
 multi-button support, beeper support
