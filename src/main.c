@@ -97,7 +97,7 @@ static void menu_draw(void);
 void menu_update(uint32_t frame);
 static void menu_background(void);
 
-
+static uint32_t g_frame_ctr;
 static uint8_t t = 0;
 
 static int menu_container_left = 10;
@@ -106,7 +106,7 @@ static int menu_button_height = 20;
 static int menu_button_spacing = 27;
 static int menu_button_start_y = 15;
 
-
+static uint16_t g_bat_raw = BAT_FULL;  /* default = fully charged (3582) */
 
 
 /* ── App state ──────────────────────────────────────────────────────── */
@@ -144,6 +144,9 @@ void app_init(void) {
     app_set_sleep_timeout(120000);           /* sleep after 60 s idle    */
     //app_set_hold_reset(10000, on_reset);    /* hold 10 s to reset       */
 
+
+    g_bat_raw    = bat_read_raw();
+    g_frame_ctr  = 0;
 
     g_count = nv_read(MY_KEY, 0);
 
@@ -188,13 +191,37 @@ static void menu_background(void)
     }
 }
 
+static void draw_bat(void)
+{
+    uint16_t raw = g_bat_raw;
+    uint16_t dim = 0x2104U;   /* dark grey */
+    uint16_t c0, c1, c2;
+
+    if      (raw >= BAT_FULL) { c0 = 0x06E0U; c1 = 0x06E0U; c2 = 0x06E0U; } /* green  */
+    else if (raw >= BAT_WARN) { c0 = 0x06FFU; c1 = 0x06FFU; c2 = dim;     } /* yellow */
+    else if (raw >= BAT_CRIT) { c0 = 0x001FU; c1 = dim;    c2 = dim;     } /* red    */
+    else                      { c0 = dim;      c1 = dim;     c2 = dim;     } /* dead   */
+
+    /* Clear interior then draw border */
+    gc9107_fill_rect(108, 3, 17, 8, 0x0000U);
+    gc9107_fill_rect(108, 3, 17, 1, 0xFFFFU);  /* top edge    */
+    gc9107_fill_rect(108,10, 17, 1, 0xFFFFU);  /* bottom edge */
+    gc9107_fill_rect(108, 3,  1, 8, 0xFFFFU);  /* left edge   */
+    gc9107_fill_rect(124, 3,  1, 8, 0xFFFFU);  /* right edge  */
+    gc9107_fill_rect(125, 5,  2, 4, 0xFFFFU);  /* nub         */
+    /* Fill bars */
+    gc9107_fill_rect(109, 4, 4, 6, c0);
+    gc9107_fill_rect(114, 4, 4, 6, c1);
+    gc9107_fill_rect(119, 4, 4, 6, c2);
+}
+
 static void menu_draw(void)
 {
     
 
-    draw_text("Main Menu v1", 10, 10, COL_SCORE, COL_EYE);
-    draw_text("Made by jo3", 10, 20, COL_SCORE, COL_EYE);
-
+    draw_text("Main Menu v1", 10, 15, 0xFFFFU, 0x0000U);
+    draw_text("Made by jo3", 10, 25, 0xFFFFU, 0x0000U);
+    draw_bat();
 
     if(g_count == MENU_PONG)
     {
@@ -237,16 +264,16 @@ void app_update(uint32_t frame)
 {
 
     //Only for vape with 1 button
-    /*
     if (button_held_ms() > 2500u) {
         g_state = STATE_MENU;
         clear_display();
+        menu_background();
         menu_draw();
-        g_count++;
-    }*/
+        //g_count++;
+    }
 
 
-    if (button_is_up() && button_held_ms() > 250u && g_state != STATE_MENU) {
+    if (button_is_up() && button_held_ms() > 950u && g_state != STATE_MENU) {
         g_state = STATE_MENU;
         clear_display();
         menu_background();
@@ -256,6 +283,13 @@ void app_update(uint32_t frame)
 
     if (g_state == STATE_MENU) {
         menu_update(frame);
+
+         g_frame_ctr++;
+
+        if (g_frame_ctr % 150u == 0u) {
+            g_bat_raw = bat_read_raw();
+            draw_bat();
+        }
     }
         
     if (g_state == STATE_PONG) {
@@ -289,7 +323,7 @@ void menu_update(uint32_t frame) {
     buf[2] = '0' + ((v / 10) % 10);
     buf[3] = '0' + (v % 10);
     buf[4] = '\0';
-    draw_text(buf, 10, 30, COL_RGB(0,0,255), COL_EYE);
+    draw_text(buf, 10, 5, COL_RGB(0,0,255), COL_EYE);
 
 
     char buf1[16];
@@ -299,28 +333,14 @@ void menu_update(uint32_t frame) {
     buf1[2] = '0' + ((b / 10) % 10);
     buf1[3] = '0' + (b % 10);
     buf1[4] = '\0';
-    draw_text(buf1, 45, 30, COL_RGB(255,0,255), COL_EYE);
+    draw_text(buf1, 45, 5, COL_RGB(255,0,255), COL_EYE);
 
-
-
-    char buf2[8];
-
-    uint32_t psc = TIM1->ARR;
-
-    buf2[0]='0'+((psc/10000)%10);
-    buf2[1]='0'+((psc/1000)%10);
-    buf2[2]='0'+((psc/100)%10);
-    buf2[3]='0'+((psc/10)%10);
-    buf2[4]='0'+(psc%10);
-    buf2[5]=0;
-
-    draw_text(buf2,80,30,COL_RGB(0,255,0),0);
 
     static uint8_t last_down = 0;
     static uint8_t last_up = 0;
 
     uint8_t down = button_is_down();
-    uint8_t up   = button_is_up();
+    uint8_t up   = button_is_left();
 
     
     if (button_just_pressed() && g_state == STATE_MENU) {
@@ -399,7 +419,7 @@ void menu_update(uint32_t frame) {
     }
 
     //Only for vape with 1 button
-    /*
+    
     if (g_state == STATE_MENU) {
         if (button_held_ms() > 1500u) {
             if (g_count == MENU_PONG) {
@@ -429,7 +449,7 @@ void menu_update(uint32_t frame) {
                 return;
             }
         }
-    }*/
+    }
     
 }
 

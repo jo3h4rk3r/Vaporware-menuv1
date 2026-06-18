@@ -56,7 +56,7 @@
  *   Raw 2906 ≈ 3.00 V (warn)         Raw 2422 ≈ 2.50 V (critical)  */
 #define BAT_ADC_CHANNEL 6       /* ADC channel 6 = PA6                  */
 #define BAT_GPIO_PORT   GPIOA   /* GPIO port for battery sense pin       */
-#define BAT_GPIO_PIN    6       /* GPIO pin number for battery sense     */
+#define BAT_GPIO_PIN    6      /* GPIO pin number for battery sense     */
 #define BAT_FULL        3582    /* ≈ 3.70 V — display full indicator     */
 #define BAT_WARN        2906    /* ≈ 3.00 V — display low indicator      */
 #define BAT_CRIT        2422    /* ≈ 2.50 V — force sleep immediately    */

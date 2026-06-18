@@ -5,7 +5,8 @@
 #define COIL_PORT GPIOA
 #define COIL_PIN  5
 
-uint8_t sounddriverEnabled = 1;
+// Disabled by default 
+uint8_t sounddriverEnabled = 0;
 
 void coil_set(uint8_t on) {
     if (sounddriverEnabled) {
@@ -17,6 +18,7 @@ void coil_set(uint8_t on) {
     }
 }
 
+//Could be better lol
 void beep(uint16_t hz, uint16_t ms) {
     if (sounddriverEnabled) {
         hz *= 10;
@@ -42,7 +44,7 @@ void delay_us(uint32_t us) {
 
     while(us--)
     {
-        count = 8;   // tune experimentally
+        count = 8;   
         while(count--);
     }
 }
