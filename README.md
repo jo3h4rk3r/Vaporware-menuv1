@@ -1,6 +1,6 @@
 # Vaporware - MenuV1
 
-This a fork of Vaporware that adds
+This is a fork of Vaporware that adds
 multi-button support, beeper support
 and a interactive menu.
 Beeper uses existing vape coil pins and is disabled by default. 
