@@ -6,6 +6,8 @@ multi-button support, beeper support
 and a interactive menu.
 Beeper uses existing vape coil pins and is disabled by default. 
 
+I could not find the exact keypad that i used here but i found one very similar that will work: https://www.caddxfpv.com/products/caddxfpv-camera-accessories-osd-menu-board?variant=19340307759193&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooicjKupR_XhQf7rAnX03UfVZbYXv-UX_9yr33v4fmzhtaw_Hm3AII
+
 >THIS PROGRAMS STRUCTURE AND README HAS BEEN ALTED FROM ORIGNAL VERSION! PLEASE VISIT https://github.com/ImoverEngineering/Vaporware IF YOU WANT THE ORIGNAL PROJECT.
 
 >CREDITS TO ImoverEngineering.
