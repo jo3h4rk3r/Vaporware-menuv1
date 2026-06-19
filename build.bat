@@ -55,13 +55,16 @@ echo [11/11] raycaster.c     (app)
 echo [12/12] fungraphics.c     (app)
 %GCC% %CFLAGS% -c src\fungraphics.c -o build\fungraphics.o || goto :error
 
-echo [13/12] brickbreaker.c     (app)
+echo [13/13] brickbreaker.c     (app)
 %GCC% %CFLAGS% -c src\brickbreaker.c -o build\brickbreaker.o || goto :error
+
+echo [14/14] snake.c     (app)
+%GCC% %CFLAGS% -c src\snake.c -o build\snake.o || goto :error
 
 
 echo Linking...
 %GCC% %CPU% -T n32g031.ld -Wl,--gc-sections -Wl,-Map=build\%APP_NAME%.map -nostdlib -lnosys ^
-  build\startup.o build\system.o build\pong.o build\fungraphics.o build\display.o build\vape.o ^
+  build\startup.o build\system.o build\pong.o build\snake.o build\fungraphics.o build\display.o build\vape.o ^
   build\button.o build\battery.o build\brickbreaker.o build\sounddriver.o build\nv.o build\raycaster.o build\app.o ^
   build\main.o ^
   -o build\%APP_NAME%.elf || goto :error
