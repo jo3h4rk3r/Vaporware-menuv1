@@ -33,6 +33,7 @@
 #include "raycaster.h"
 #include "fungraphics.h"
 #include "brickbreaker.h"
+#include "snake.h"
 #include "drawtext.h"
 #include "sounddriver.h"
 #include <stdio.h>
@@ -48,7 +49,8 @@ typedef enum
     STATE_PONG,
     STATE_RAYCASTER,
     STATE_GRAPHICS,
-    STATE_BRICKBREAKER
+    STATE_BRICKBREAKER,
+    STATE_SNAKE
 } AppState;
 
 static AppState g_state;
@@ -57,7 +59,8 @@ static AppState g_state;
 #define MENU_RAYCASTER  1
 #define MENU_GRAPHICS 2
 #define MENU_BRICKBREAKER 3
-#define MENU_COUNT    4
+#define MENU_SNAKE 4
+#define MENU_COUNT 5
 
 #define SCREEN_W 128
 #define SCREEN_H 160
@@ -103,8 +106,8 @@ static uint8_t t = 0;
 static int menu_container_left = 10;
 static int menu_button_width = 100;
 static int menu_button_height = 20;
-static int menu_button_spacing = 27;
-static int menu_button_start_y = 15;
+static int menu_button_spacing = 22;
+static int menu_button_start_y = 14;
 
 static uint16_t g_bat_raw = BAT_FULL;  /* default = fully charged (3582) */
 
@@ -225,7 +228,13 @@ static void menu_draw(void)
         display_fill_rect(menu_container_left + 3, menu_button_start_y + menu_button_spacing * 4 + 2, menu_button_width - 5.5, menu_button_height - 4, COL_RGB(0,0,50));
     } else {
         display_fill_rect(menu_container_left + 3, menu_button_start_y + menu_button_spacing * 4 + 2, menu_button_width - 5.5, menu_button_height - 4, COL_RGB(255,0,255));
-    }    
+    }
+    if(g_count == MENU_SNAKE)
+    {
+        display_fill_rect(menu_container_left + 3, menu_button_start_y + menu_button_spacing * 5 + 2, menu_button_width - 5.5, menu_button_height - 4, COL_RGB(0,0,50));
+    } else {
+        display_fill_rect(menu_container_left + 3, menu_button_start_y + menu_button_spacing * 5 + 2, menu_button_width - 5.5, menu_button_height - 4, COL_RGB(255,0,255));
+    }     
    
 
     
@@ -236,6 +245,8 @@ static void menu_draw(void)
     draw_text("Graphics", menu_container_left * 2, menu_button_start_y + menu_button_spacing * 3 + 8, COL_SCORE, COL_EYE);
 
     draw_text("Brick Brkr", menu_container_left * 2, menu_button_start_y + menu_button_spacing * 4 + 8, COL_SCORE, COL_EYE);
+
+    draw_text("Snake", menu_container_left * 2, menu_button_start_y + menu_button_spacing * 5 + 8, COL_SCORE, COL_EYE);
     
 }
 
@@ -243,7 +254,7 @@ void app_update(uint32_t frame)
 {
     //Comment out after multi buttons is installed.
     //Only for vape with 1 button
-    if (button_held_ms() > 2500u) {
+    if (button_held_ms() > 500u && g_state != STATE_MENU) {
         g_state = STATE_MENU;
         clear_display();
         menu_background();
@@ -290,6 +301,10 @@ void app_update(uint32_t frame)
     if (g_state == STATE_BRICKBREAKER) {
         brickbreaker_update(frame);
     }
+
+    if (g_state == STATE_SNAKE) {
+        snake_update(frame);
+    }
 }
 
 void menu_update(uint32_t frame) {
@@ -323,6 +338,7 @@ void menu_update(uint32_t frame) {
     uint8_t down = button_is_down();
     //Temp set to left for single button. Change back to button_is_up() for multi button setup.
     uint8_t up   = button_is_left();
+    //uint8_t up   = button_is_up();
 
     
     if (button_just_pressed() && g_state == STATE_MENU) {
@@ -396,7 +412,13 @@ void menu_update(uint32_t frame) {
             clear_display();
             brickbreaker_init();
             return;
-        }        
+        }
+        if (g_count == MENU_SNAKE) {
+            g_state = STATE_SNAKE;
+            clear_display();
+            snake_init();
+            return;
+        }           
     }
 
 
@@ -429,6 +451,12 @@ void menu_update(uint32_t frame) {
                 g_state = STATE_BRICKBREAKER;
                 clear_display();
                 brickbreaker_init();
+                return;
+            }
+            if (g_count == MENU_SNAKE) {
+                g_state = STATE_SNAKE;
+                clear_display();
+                snake_init();
                 return;
             }
         }

@@ -43,20 +43,20 @@ static button_t decode_adc(uint16_t v)
 {
     
     
-    
+    /*
     if (v < 150)   return BTN_DOWN;     // ~0.6V
     if (v < 450)  return BTN_RIGHT;    // ~0.9V
     if (v < 900)   return BTN_UP;        // ~0V
     if (v < 1400)   return BTN_LEFT;     // ~0.3V
-    if (v < 2000)  return BTN_PRESSED;  // ~1.3V
+    if (v < 2000)  return BTN_PRESSED;  // ~1.3V*/
     
 
-    /*
+    
     if (v < 150)   return BTN_LEFT;     // ~0.6V
     if (v < 450)  return BTN_DOWN;    // ~0.9V
     if (v < 900)   return BTN_RIGHT;        // ~0V
     if (v < 1400)   return BTN_UP;     // ~0.3V
-    if (v < 2000)  return BTN_PRESSED;  // ~1.3V*/
+    if (v < 2000)  return BTN_PRESSED;  // ~1.3V
     
     return BTN_NONE; // ~2.8V idle
 }
@@ -67,7 +67,10 @@ static button_t decode_adc(uint16_t v)
 
 uint16_t button_read_raw(void)
 {
-    
+
+
+    ADC_CTRL2 |= (1UL << 22);  /* SWSTRRCH: start conversion */
+
     uint16_t r = (uint16_t)(ADC_DAT & 0xFFFU);
 
     return r;
@@ -76,7 +79,7 @@ uint16_t button_read_raw(void)
 void button_init(void) {
 
     ADC_RSEQ3  = 7;
-    
+
     GPIOA->MODER &= ~(3U << (7 * 2));
     GPIOA->PUPDR &= ~(3U << (7 * 2));
     GPIOA->PUPDR |= (1U << (7 * 2));
