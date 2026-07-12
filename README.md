@@ -97,8 +97,8 @@ Look for a line like `1-2   0483:3748  STMicroelectronics ST-Link`. The `build.b
 
 | ST-Link pin | Vape test pad |
 |---|---|
-| SWDIO | PA13 | CC
-| SWCLK | PA14 | CC
+| SWDIO | PA13 CC1
+| SWCLK | PA14 CC2
 | GND | GND |
 | 3.3 V | — (vape is self-powered, leave disconnected) |
 
